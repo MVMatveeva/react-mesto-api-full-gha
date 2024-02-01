@@ -1,0 +1,21 @@
+.profile__info-edit {
+    background-image: url("../../../image/EditButton.svg");
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+}
+
+.profile__info-edit:hover {
+    opacity: .6000000238418579;
+}
+
+@media screen and (max-width:620px) {
+    .profile__info-edit {
+        width: 16px;
+        height: 16px;
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+    }
+}

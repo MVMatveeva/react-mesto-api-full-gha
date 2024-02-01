@@ -1,0 +1,10 @@
+.element__like-counter{
+   display: flex;
+    color: #000;
+    line-height: 13px;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 22px;
+    margin-top: 7px;
+    margin-left: 7px;
+}

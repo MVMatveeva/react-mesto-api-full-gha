@@ -1,0 +1,8 @@
+.popup__register{
+    display: flex;
+    width: 430px;
+    height: 330px;
+    background-color: #fff;
+    flex-direction: column;
+    border-radius: 10px;
+}
