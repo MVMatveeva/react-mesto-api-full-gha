@@ -7,11 +7,11 @@ const handleResponse = (res) => {
   }
 };
 
-const BASE_URL = "https://api.mesto.matveeva.nomoredomainsmonster.ru/";
+const BASE_URL = "https://api.mesto.matveeva.nomoredomainsmonster.ru";
 
 export const registerUser = (password, email) => {
   {
-    return fetch(`${BASE_URL}signup`, {
+    return fetch(`${BASE_URL}/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export const registerUser = (password, email) => {
 };
 
 export const loginUser = (email, password) => {
-  return fetch(`${BASE_URL}signin`, {
+  return fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export const loginUser = (email, password) => {
 };
 
 export const validateToken = (JWT) => {
-  return fetch(`${BASE_URL}users/me`, {
+  return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
         "Accept": "application/json",
