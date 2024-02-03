@@ -33,8 +33,8 @@ function App() {
   const [userEmail, setUserEmail] = useState(null);
 
   useEffect(() => {
-    if(isLoggedIn){
-     api
+    if (isLoggedIn) {
+      api
         .getInitialCards()
         .then((res) => {
           setCards(res);
@@ -42,10 +42,11 @@ function App() {
         .catch((err) => {
           console.log(`Ошибка: ${err}`);
         });
-  }}, [isLoggedIn]);
+    }
+  }, [isLoggedIn]);
 
   useEffect(() => {
-    if(isLoggedIn){
+    if (isLoggedIn) {
       api
         .getUserInfo()
         .then((res) => {
@@ -54,11 +55,11 @@ function App() {
         .catch((err) => {
           console.log(`Ошибка: ${err}`);
         });
-  }}, [isLoggedIn]);
+    }
+  }, [isLoggedIn]);
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
-    console.log(localStorage.getItem("jwt"))
     if (jwt) {
       auth
         .validateToken(jwt)
@@ -74,7 +75,6 @@ function App() {
         });
     }
   }, []);
-
 
   const handleEditProfileClick = () => {
     setEditProfilePopupOpen(true);
@@ -209,7 +209,12 @@ function App() {
           path="/"
           element={
             <>
-              <Header mail={userEmail} onClick={handleExit} title="Выйти" route="/sign-in"/>
+              <Header
+                mail={userEmail}
+                onClick={handleExit}
+                title="Выйти"
+                route="/sign-in"
+              />
               <ProtectedRoute
                 element={Main}
                 onEditProfile={handleEditProfileClick}

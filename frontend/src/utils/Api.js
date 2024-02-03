@@ -1,5 +1,5 @@
 class Api {
-  constructor({ url, headers }) {
+  constructor({ url }) {
     this._url = url;
   }
 
@@ -21,17 +21,20 @@ class Api {
     }).then(this._handleResponse);
   }
 
-  newCard(name, link) {
+  newCard(data) {
     return fetch(`${this._url}/cards`, {
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
         "Content-type": "application/json"
       },
       method: "POST",
-      body: JSON.stringify({name,link}),
+      body: JSON.stringify({
+        name: data.name,
+        link: data.link,
+      }),
     }).then(this._handleResponse);
   }
-
+  
   deleteCard(cardId) {
     return fetch(`${this._url}/cards/${cardId}`, {
       headers: {

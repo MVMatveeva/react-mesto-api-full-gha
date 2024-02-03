@@ -7,7 +7,7 @@ const handleResponse = (res) => {
   }
 };
 
-const BASE_URL = "https://api.mesto.matveeva.nomoredomainsmonster.ru";
+export const BASE_URL = "https://api.mesto.matveeva.nomoredomainsmonster.ru";
 
 export const registerUser = (password, email) => {
   {
