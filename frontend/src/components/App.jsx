@@ -129,8 +129,8 @@ function App() {
   const handleAddPlaceSubmit = ({ name, link }) => {
     api
       .newCard({ name, link })
-      .then((addNewCard) => {
-        setCards([addNewCard, ...cards]);
+      .then((newCard) => {
+        setCards([newCard, ...cards]);
         closeAllPopups();
       })
       .catch((err) => {
