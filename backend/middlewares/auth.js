@@ -22,7 +22,7 @@ module.exports.auth = (req, res, next) => {
   try {
     payload = jwt.verify(token, NODE_ENV ? JWT_SECRET : 'super-secret-key');
   } catch (error) {
-    return handleAuthError(res, next);
+    return handleAuthError(next);
   }
 
   req.user = payload;
