@@ -58,6 +58,7 @@ function App() {
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
+    console.log(localStorage.getItem("jwt"))
     if (jwt) {
       auth
         .validateToken(jwt)

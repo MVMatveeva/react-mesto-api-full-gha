@@ -14,8 +14,8 @@ class Api {
   getInitialCards() {
     return fetch(`${this._url}/cards`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-        'Content-type': 'application/json'
+        "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
+        "Content-type": "application/json"
       },
       method: "GET",
     }).then(this._handleResponse);
@@ -24,8 +24,8 @@ class Api {
   newCard(name, link) {
     return fetch(`${this._url}/cards`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-        'Content-type': 'application/json'
+        "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
+        "Content-type": "application/json"
       },
       method: "POST",
       body: JSON.stringify({name,link}),
@@ -35,8 +35,8 @@ class Api {
   deleteCard(cardId) {
     return fetch(`${this._url}/cards/${cardId}`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-        'Content-type': 'application/json'
+        "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
+        "Content-type": "application/json"
       },
       method: "DELETE",
     }).then(this._handleResponse);
@@ -45,8 +45,8 @@ class Api {
   changeLikeCardStatus(cardId, isLiked) {
     return fetch(`${this._url}/cards/${cardId}/likes`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-        'Content-type': 'application/json'
+        "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
+        "Content-type": "application/json"
       },
       method: `${isLiked ? "PUT" : "DELETE"}`,
     }).then(this._handleResponse);
@@ -55,8 +55,8 @@ class Api {
   getUserInfo() {
     return fetch(`${this._url}/users/me`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-        'Content-type': 'application/json'
+        "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
+        "Content-type": "application/json"
       },
       method: "GET",
     }).then(this._handleResponse);
@@ -65,8 +65,8 @@ class Api {
   editUserInfo(data) {
     return fetch(`${this._url}/users/me`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-        'Content-type': 'application/json'
+        "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
+        "Content-type": "application/json"
       },
       method: "PATCH",
       body: JSON.stringify({
@@ -79,8 +79,8 @@ class Api {
   editAvatar(data) {
     return fetch(`${this._url}/users/me/avatar`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-        'Content-type': 'application/json'
+        "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
+        "Content-type": "application/json"
       },
       method: "PATCH",
       body: JSON.stringify({
