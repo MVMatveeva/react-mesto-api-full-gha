@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.91.102
+IP 51.250.91.102
 
 Frontend https://mesto.matveeva.nomoredomainsmonster.ru
 
