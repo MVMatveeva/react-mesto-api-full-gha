@@ -64,7 +64,7 @@ function App() {
         .then((res) => {
           if (res) {
             setIsLoggedIn(true);
-            setUserEmail(res.data.email);
+            setUserEmail(res.email);
             navigate("/");
           }
         })
@@ -129,8 +129,8 @@ function App() {
   const handleAddPlaceSubmit = ({ name, link }) => {
     api
       .newCard({ name, link })
-      .then((newCard) => {
-        setCards([newCard, ...cards]);
+      .then((addNewCard) => {
+        setCards([addNewCard, ...cards]);
         closeAllPopups();
       })
       .catch((err) => {

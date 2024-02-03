@@ -21,14 +21,14 @@ class Api {
     }).then(this._handleResponse);
   }
 
-  newCard(card) {
+  newCard(name, link) {
     return fetch(`${this._url}/cards`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
         'Content-type': 'application/json'
       },
       method: "POST",
-      body: JSON.stringify(card),
+      body: JSON.stringify({name,link}),
     }).then(this._handleResponse);
   }
 
