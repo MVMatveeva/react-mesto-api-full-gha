@@ -10,7 +10,14 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { PORT = 3000 } = process.env;
 const app = express();
 
-app.use(cors());
+const allowedCors = [
+  'https://praktikum.tkhttps://mesto.matveeva.nomoredomainsmonster.ru',
+  'https://api.mesto.matveeva.nomoredomainsmonster.ru',
+  'localhost:3000',
+  'localhost:3001',
+];
+
+app.use(cors(allowedCors));
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
