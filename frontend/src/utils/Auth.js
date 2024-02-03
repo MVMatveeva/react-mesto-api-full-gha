@@ -38,13 +38,13 @@ export const loginUser = (email, password) => {
    )
 };
 
-export const validateToken = (JWT) => {
+export const validateToken = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
         "Accept": "application/json",
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${JWT}`,
+      "Authorization": `Bearer ${token}`,
     },
   }).then(handleResponse);
 };

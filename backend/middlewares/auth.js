@@ -7,6 +7,8 @@ const handleAuthError = (next) => {
   next(new UnauthorizedError('Необходима авторизация'));
 };
 
+const extractBearerToken = (header) => header.replace('Bearer ', '');
+
 module.exports.auth = (req, res, next) => {
   const { authorization } = req.headers;
 
@@ -14,7 +16,7 @@ module.exports.auth = (req, res, next) => {
     return handleAuthError(res, next);
   }
 
-  const token = authorization.replace('Bearer ', '');
+  const token = extractBearerToken(authorization);
   let payload;
 
   try {
