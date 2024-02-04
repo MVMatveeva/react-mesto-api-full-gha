@@ -168,8 +168,6 @@ function App() {
       .catch(() => {
         setPopupRegisterImage(Fail);
         setPopupRegisterTitle("Что-то пошло не так! Попробуйте ещё раз.");
-      })
-      .finally(() => {
         handleInfoTooltip(true)
       })
   };
